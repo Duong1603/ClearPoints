@@ -43,6 +43,7 @@ function GameApp() {
   };
 
   const handleNumberClick = (num) => {
+    if (gameOver) return;
     if (num !== Math.min(...countdown)) {
       setIsComplete(true);
       setIsPlaying(false);
@@ -90,8 +91,8 @@ function GameApp() {
       const randomPositions = {};
       countdown.forEach((num, index) => {
         randomPositions[num] = {
-          top: Math.random() * 470,
-          left: Math.random() * 470,
+          top: Math.random() * 450,
+          left: Math.random() * 450,
           zIndex: countdown.indexOf(Math.min(...countdown)),
         };
       });
